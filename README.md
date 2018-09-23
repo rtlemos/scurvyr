@@ -42,9 +42,6 @@ that it spends as much time as possible in each “bubble” before moving
 on to the next one.
 
     s = sfc(data = square, lat = nrow(square):1, lon = 1:ncol(square), verbose = verbose)
-
-    ## 69.4%
-
     plotPath(s)
 
 ![](README_files/figure-markdown_strict/squarepath-1.png)
@@ -60,9 +57,6 @@ Let’s replace one of the bubbles with NAs.
 We can see the impact of NAs on the path.
 
     sNA = sfc(data = squareNA, lat = nrow(square):1, lon = 1:ncol(square), verbose = verbose)
-
-    ## 78.1%
-
     plotPath(sNA)
 
 ![](README_files/figure-markdown_strict/squareNApath-1.png)
@@ -98,16 +92,13 @@ the function `preprocessBathymetry`.
 
     cETOPO4$data = preprocessBathymetry(cETOPO4$data, neritic = -1, verbose = verbose)
     s4 = sfc(data = cETOPO4$data, lat = cETOPO4$lat, lon = cETOPO4$lon, verbose = verbose)
-
-    ## 3.4% 6.8% 10.2% 13.6% 17.1% 20.5% 23.9% 27.3% 30.7% 34.1% 37.5% 40.9% 44.3% 47.7% 51.2% 54.6% 58% 61.4% 64.8% 68.2% 71.6% 75% 78.4% 81.9% 85.3% 88.7% 92.1% 95.5% 98.9%
-
     plotPath(s4)
 
 ![](README_files/figure-markdown_strict/coarsepath-1.png)
 
 Finally, we run the algorithm on the whole ETOPO30 bathymetry data.
-Warning: this may take an hour to run, because it works with large (64k
-x 64k) sparse matrices.
+Warning: this may take an hour to run, because it works with a large
+(64k x 64k) sparse matrix.
 
     #data = preprocessBathymetry(etopo30, neritic = -2000, verbose = verbose)
     #lat = seq(89.75, -89.75, by=-0.5)

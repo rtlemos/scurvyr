@@ -35,7 +35,7 @@ minimumSpanningTree = function(similarity_matrix, verbose, verbose_every = 100){
     tree = c(tree, index.i)
     alt_tree = c(alt_tree, index.j)
     maxmat[tree,] = getColMax(x, tree)
-    if (i %% verbose_every == 0) cat(paste0(round(100 * i / nr, 1), '% '))
+    if (verbose && i %% verbose_every == 0) cat(paste0(round(100 * i / nr, 1), '% '))
   }
   tree = tree[2:nr]
   alt_tree = alt_tree[2:nr]
