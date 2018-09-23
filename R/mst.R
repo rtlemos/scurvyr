@@ -1,17 +1,19 @@
 #' Compute a Minimum Spanning Tree given a sparse similarity matrix
 #'
-#' @param similarity_matrix sparse similarity matrix (= 1/distance_matrix)
-#' @param verbose_every console notification of progress
+#' @param similarity_matrix Sparse similarity matrix (= 1/distance_matrix)
+#' @param verbose Print status to console
+#' @param verbose_every Console notification of progress
 #'
-#' @return sparse MST with 1 for connected nodes and 0 elsewhere
+#' @return Sparse MST with 1 for connected nodes and 0 elsewhere
 #' @export
 #'
 #' @examples
 #' minimumSpanningTree(sparseMatrix(i = c(1,4,1,2,3,2,3,4,3,4),
 #'                                  j = c(1,1,4,2,2,3,3,3,4,4),
-#'                                  x = c(Inf,1,1,Inf,3,3,Inf,2,2,Inf)))
+#'                                  x = c(Inf,1,1,Inf,3,3,Inf,2,2,Inf)), 
+#'                                  verbose = FALSE)
 #'
-minimumSpanningTree = function(similarity_matrix, verbose = TRUE, verbose_every = 100){
+minimumSpanningTree = function(similarity_matrix, verbose, verbose_every = 100){
   x = enforceM(similarity_matrix)
   small_number = 0
   nr = nrow(x)
