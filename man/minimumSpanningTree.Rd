@@ -4,16 +4,17 @@
 \alias{minimumSpanningTree}
 \title{Compute a Minimum Spanning Tree given a sparse similarity matrix}
 \usage{
-minimumSpanningTree(similarity_matrix, verbose = TRUE,
-  verbose_every = 100)
+minimumSpanningTree(similarity_matrix, verbose, verbose_every = 100)
 }
 \arguments{
-\item{similarity_matrix}{sparse similarity matrix (= 1/distance_matrix)}
+\item{similarity_matrix}{Sparse similarity matrix (= 1/distance_matrix)}
 
-\item{verbose_every}{console notification of progress}
+\item{verbose}{Print status to console}
+
+\item{verbose_every}{Console notification of progress}
 }
 \value{
-sparse MST with 1 for connected nodes and 0 elsewhere
+Sparse MST with 1 for connected nodes and 0 elsewhere
 }
 \description{
 Compute a Minimum Spanning Tree given a sparse similarity matrix
@@ -21,6 +22,7 @@ Compute a Minimum Spanning Tree given a sparse similarity matrix
 \examples{
 minimumSpanningTree(sparseMatrix(i = c(1,4,1,2,3,2,3,4,3,4),
                                  j = c(1,1,4,2,2,3,3,3,4,4),
-                                 x = c(Inf,1,1,Inf,3,3,Inf,2,2,Inf)))
+                                 x = c(Inf,1,1,Inf,3,3,Inf,2,2,Inf)), 
+                                 verbose = FALSE)
 
 }

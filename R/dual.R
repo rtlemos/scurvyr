@@ -9,7 +9,7 @@ getDual = function(data, lat, lon, verbose) {
   coarse = getCoarseData(data = data, lat = lat, lon = lon, verbose = verbose)
   neighbors = getNeighbors(mat = coarse$data, verbose = verbose)
   similarity_matrix = getSimilarityMatrix(data = data, neighbors = neighbors, verbose = verbose)
-  mstree = minimumSpanningTree(similarity_matrix)
+  mstree = minimumSpanningTree(similarity_matrix, verbose = verbose)
   dual = list(data = coarse$data, lat = coarse$lat, lon = coarse$lon,
               neighbors = neighbors, similarity_matrix = similarity_matrix, mstree = mstree)
   return(dual)

@@ -1,4 +1,4 @@
-Package: surfacecurve
+Package: scurvy
 Type: Package
 Title: Context-dependent space filling curves for gridded data with missing values
 Version: 0.1.0
