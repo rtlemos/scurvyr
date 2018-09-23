@@ -1,0 +1,17 @@
+Package: surfacecurve
+Type: Package
+Title: Context-dependent space filling curves for gridded data with missing values
+Version: 0.1.0
+Author: Ricardo Lemos
+Maintainer: Ricardo Lemos <rtl00@yahoo.com>
+Description: Fit a 1D space-filling curve to a 2D image based on its spatial correlation properties.
+    The result may be advantageous relative to universal algorithms such as the Peano and Hilbert SFCs.
+    The algorithm has been tested on square and rectangular images of small to moderate size (360 x 720).
+    A potentially interesting feature is that the algorithm can cope with patches of missing values in the image.
+License: GNU GPL
+Encoding: UTF-8
+LazyData: true
+Depends:
+  Matrix,
+  ggplot2
+RoxygenNote: 6.1.0
