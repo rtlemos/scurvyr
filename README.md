@@ -1,7 +1,8 @@
 Context-dependent Space Filling curves
 ======================================
 
--   Why: 2D grids is harder to work with than 1D equally spaced data.
+-   Why: 2D gridded data are harder to work with than 1D equally spaced
+    data.
 -   How: A space-filling algorithm inspired by the work of [Dafner,
     Cohen-Or and
     Matias (2000)](http://theory.stanford.edu/~matias/papers/eg2000.pdf).
@@ -100,8 +101,10 @@ Finally, we run the algorithm on the whole ETOPO30 bathymetry data.
 Warning: this may take an hour to run, because it works with a large
 (64k x 64k) sparse matrix.
 
-    #data = preprocessBathymetry(etopo30, neritic = -2000, verbose = verbose)
-    #lat = seq(89.75, -89.75, by=-0.5)
-    #lon = seq(-179.75, 179.75, by=0.5)
-    #sEtopo = sfc(data = data, lat = lat, lon = lon, verbose = verbose)
-    #plotPath(sEtopo)
+    data = preprocessBathymetry(etopo30, neritic = -2000, verbose = verbose)
+    lat = seq(89.75, -89.75, by=-0.5)
+    lon = seq(-179.75, 179.75, by=0.5)
+    sEtopo = sfc(data = data, lat = lat, lon = lon, verbose = verbose)
+    plotPath(sEtopo)
+
+![](README_files/figure-markdown_strict/etopopath-1.png)

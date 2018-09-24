@@ -1,5 +1,5 @@
 ---
-title: "Context-dependent space filling curves"
+title: "Context-Dependent Space Filling Curves"
 author: "Ricardo T. Lemos"
 date: "9/22/2018"
 output: md_document
@@ -9,9 +9,9 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Context-dependent Space Filling curves
+# Context-Dependent Space Filling Curves
 
-- Why: 2D grids is harder to work with than 1D equally spaced data.
+- Why: 2D gridded data are harder to work with than 1D equally spaced data.
 - How: A space-filling algorithm inspired by the work of [Dafner, Cohen-Or and Matias (2000)](http://theory.stanford.edu/~matias/papers/eg2000.pdf).
 - What: Unlike Hilbert and Peano curves, which are universal (i.e., context-independent),
 the algorithm proposed here adapts to the data provided as an input matrix. This matrix
@@ -97,10 +97,10 @@ Finally, we run the algorithm on the whole ETOPO30 bathymetry data.
 Warning: this may take an hour to run, because it works with a large (64k x 64k) sparse matrix.
 
 ```{r etopopath, cache=TRUE}
-#data = preprocessBathymetry(etopo30, neritic = -2000, verbose = verbose)
-#lat = seq(89.75, -89.75, by=-0.5)
-#lon = seq(-179.75, 179.75, by=0.5)
-#sEtopo = sfc(data = data, lat = lat, lon = lon, verbose = verbose)
-#plotPath(sEtopo)
+data = preprocessBathymetry(etopo30, neritic = -2000, verbose = verbose)
+lat = seq(89.75, -89.75, by=-0.5)
+lon = seq(-179.75, 179.75, by=0.5)
+sEtopo = sfc(data = data, lat = lat, lon = lon, verbose = verbose)
+plotPath(sEtopo)
 ```
 
