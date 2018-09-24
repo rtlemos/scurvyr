@@ -1,10 +1,10 @@
-Context-dependent Space Filling curves
+Context-Dependent Space Filling Curves
 ======================================
 
 -   Why: 2D gridded data are harder to work with than 1D equally spaced
     data.
--   How: A space-filling algorithm inspired by the work of [Dafner,
-    Cohen-Or and
+-   How: A space-filling curve algorithm inspired by the work of
+    [Dafner, Cohen-Or and
     Matias (2000)](http://theory.stanford.edu/~matias/papers/eg2000.pdf).
 -   What: Unlike Hilbert and Peano curves, which are universal (i.e.,
     context-independent), the algorithm proposed here adapts to the data
