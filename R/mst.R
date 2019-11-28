@@ -164,7 +164,7 @@ plotPath = function(dataset, plot_data = FALSE,
       rst = rst[crit, ]
     }
     p = ggplot() + geom_raster(rst, mapping = aes(x=lon, y=lat, fill=z)) +
-      scale_fill_gradient(low='dark gray', high='white')
+      scale_fill_gradient(low=gray(0.01), high=gray(0.99))
   } else {
     p = ggplot()
   }
