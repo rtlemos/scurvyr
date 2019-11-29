@@ -38,7 +38,9 @@ sfc = function(data = preprocessBathymetry(etopo30, neritic = -1000),
   dual = getDual(data = data, lat = lat, lon = lon, verbose = verbose)
   connection_matrix = getConnectionMatrix(dual = dual, verbose = verbose)
   path = getPath(connection_matrix = connection_matrix, verbose = verbose)
-  dataset = list(data = data, lat = lat, lon = lon, connection_matrix = connection_matrix, path = path)
+  group = getGroups(data = data, path = path, lat = lat, lon = lon)
+  dataset = list(data = data, lat = lat, lon = lon, connection_matrix = connection_matrix,
+                 path = path, group = group)
   dataset
 
 }

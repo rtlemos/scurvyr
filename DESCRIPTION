@@ -1,7 +1,7 @@
 Package: scurvy
 Type: Package
 Title: Context-dependent space filling curves for gridded data with missing values
-Version: 0.1.0
+Version: 0.1.1
 Author: Ricardo Lemos
 Maintainer: Ricardo Lemos <rtl00@yahoo.com>
 Description: Fit a 1D space-filling curve to a 2D image based on its spatial correlation properties.
@@ -12,6 +12,7 @@ License: GNU GPL
 Encoding: UTF-8
 LazyData: true
 Depends:
+  changepoint,
   Matrix,
   ggplot2
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1

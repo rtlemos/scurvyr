@@ -7,10 +7,10 @@
 \format{A data frame with 175469 rows and 3 columns: latitude, longitude, and path ID number}
 \source{
 The path and the lat/lon can be created afresh by typing
-        > data = preprocessBathymetry(etopo30, neritic = -2000, verbose = verbose)
+        > data = preprocessBathymetry(etopo30, neritic = -2000, verbose = TRUE)
         > lat = seq(89.75, -89.75, by=-0.5)
         > lon = seq(-179.75, 179.75, by=0.5)
-        > sEtopo = sfc(data = data, lat = lat, lon = lon, verbose = verbose)
+        > sEtopo = sfc(data = data, lat = lat, lon = lon, verbose = TRUE)
         > etopoPath = data.frame(lat = lat[(sEtopo$path - 1) %% 360 + 1],
         >                        lon = lon[floor((sEtopo$path - 1) / 360) + 1],
         >                        path = sEtopo$path)
