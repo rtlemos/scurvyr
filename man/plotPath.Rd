@@ -5,8 +5,9 @@
 \title{Plot a path}
 \usage{
 plotPath(dataset, plot_data = FALSE, lat_bounds = NULL,
-  lon_bounds = NULL, colored_line = TRUE, fixed_aspect_ratio = TRUE,
-  background = "black")
+  lon_bounds = NULL, colored_line = "value",
+  fixed_aspect_ratio = TRUE, background = NA,
+  show_line_scale = FALSE, show_fill_scale = FALSE)
 }
 \arguments{
 \item{dataset}{List with data, path, lat, lon, etc.}
@@ -17,11 +18,15 @@ plotPath(dataset, plot_data = FALSE, lat_bounds = NULL,
 
 \item{lon_bounds}{Longitude bounds (for zooming in)}
 
-\item{colored_line}{Color the path using a rainbow palette?}
+\item{colored_line}{Color the path: NA=>no, "group"=> by group ID, "value"=> by group value}
 
 \item{fixed_aspect_ratio}{Use a 1:1 aspect ratio in the plot?}
 
 \item{background}{Background color}
+
+\item{show_line_scale}{Display colorbar for line?}
+
+\item{show_fill_scale}{Display colorbar for fill?}
 }
 \value{
 ggplot of path

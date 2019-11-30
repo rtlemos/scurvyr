@@ -7,13 +7,21 @@
 #' @param colored_line Color the path: NA=>no, "group"=> by group ID, "value"=> by group value
 #' @param fixed_aspect_ratio Use a 1:1 aspect ratio in the plot?
 #' @param background Background color
+#' @param show_line_scale Display colorbar for line?
+#' @param show_fill_scale Display colorbar for fill?
 #'
 #' @return ggplot of path
 #' @export
 #'
-plotPath = function(dataset, plot_data = FALSE,
-                    lat_bounds = NULL, lon_bounds = NULL,
-                    colored_line = NA, fixed_aspect_ratio = TRUE, background = 'black') {
+plotPath = function(dataset,
+                    plot_data = FALSE,
+                    lat_bounds = NULL,
+                    lon_bounds = NULL,
+                    colored_line = 'value', 
+                    fixed_aspect_ratio = TRUE,
+                    background = NA,
+                    show_line_scale = FALSE,
+                    show_fill_scale = FALSE) {
   path = dataset$path
   lat = dataset$lat
   lon = dataset$lon
@@ -64,7 +72,7 @@ plotPath = function(dataset, plot_data = FALSE,
       scale_color_gradientn(colours=rainbow(100))
   } else if (colored_line %in% c("val", "value", "v")) {
     p = p + geom_line(data = df, mapping=aes(x=lon, y=lat, group=idx, color = val)) +
-      scale_color_gradientn(colours=rainbow(100))
+      scale_color_viridis_c(option='D')
   } else {
     p = p + geom_line(data=df, mapping=aes(x=lon, y=lat, group=idx))
   }
@@ -72,7 +80,9 @@ plotPath = function(dataset, plot_data = FALSE,
     p = p + scale_x_continuous(limits = lon_bounds, expand = c(0, 0)) +
       scale_y_continuous(limits = lat_bounds, expand = c(0, 0))
   }
-  p = p + guides(color=FALSE, fill=FALSE) +
+  clr <- if (show_line_scale) 'colorbar' else 'none'
+  fll <- if (show_fill_scale) 'colorbar' else 'none'
+  p = p + guides(color=clr, fill=fll) +
     theme(panel.background = element_rect(fill = background),
           panel.grid.major = element_blank(),
           panel.grid.minor = element_blank())

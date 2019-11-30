@@ -2,3 +2,5 @@ base
 Matrix
 ggplot2
 scurvy
+zoo
+changepoint
