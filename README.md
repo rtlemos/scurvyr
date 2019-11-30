@@ -20,31 +20,23 @@ Examples
 Setting up…
 
     library(scurvy)
-
-    ## Loading required package: Matrix
-
-    ## Loading required package: ggplot2
-
     verbose = FALSE
-
-Let’s start with a mock square dataset. For the algorithm to work, the
-data matrix must have even numbers of rows and columns.
-
-    r = 8
-    square = mapply(1:24, FUN = function(j) mapply(1:24, FUN = function(i) {
-      sin((i-1)*pi/r) + cos((j-1)*pi/r) + 8 * sin((i-1)*pi/r) * cos((j-1)*pi/r)
-    }))
-    set.seed(1)
-    square = mapply(1:(3 * r), FUN = function(j) mapply(1:(3 * r), FUN = function(i) {
-      f <- c(cos(2*(i)*pi/r), cos(2*(j)*pi/r), rnorm(1, sd = 0.01))
-      (f[1] < 0) * (f[2] < 0) + f[3]
-    }))
     myplot <- function(square_data) {
       ggplot(data=cbind(expand.grid(lat=(3*r):1, lon=1:(3*r)), value=c(square_data)), 
              aes(x=lon,y=lat,fill=value)) + 
         geom_raster() + 
         scale_fill_gradient2(low = 'black', mid="red", high='white', midpoint = 0.5)
     }
+
+Let’s start with a mock square dataset. For the algorithm to work, the
+data matrix must have even numbers of rows and columns.
+
+    r = 8
+    set.seed(1)
+    square = mapply(1:(3 * r), FUN = function(j) mapply(1:(3 * r), FUN = function(i) {
+      f <- c(cos(2*(i)*pi/r), cos(2*(j)*pi/r), rnorm(1, sd = 0.01))
+      (f[1] < 0) * (f[2] < 0) + f[3]
+    }))
     myplot(square)
 
 ![](README_files/figure-markdown_strict/square-1.png)
