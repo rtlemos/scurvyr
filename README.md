@@ -48,13 +48,16 @@ on to the next one.
     s = sfc(data = square, lat = nrow(square):1, lon = 1:ncol(square), verbose = verbose)
     plotPath(s, plot_data = TRUE, colored_line = 'val')
 
-![](README_files/figure-markdown_strict/squarepath-1.png) Here’s another
-way of depicting the path, now with color representing group ID.
+![](README_files/figure-markdown_strict/squarepath-1.png)
+
+Here’s another way of depicting the path, now with color representing
+group ID.
 
     plotPath(s, plot_data = TRUE, colored_line = 'group_id')
 
-![](README_files/figure-markdown_strict/squarepath2-1.png) Let’s replace
-one of the bubbles with NAs.
+![](README_files/figure-markdown_strict/squarepath2-1.png)
+
+Let’s replace one of the bubbles with NAs.
 
     squareNA = square
     squareNA[9:16, 13:20] = NA

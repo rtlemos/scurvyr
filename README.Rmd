@@ -53,10 +53,12 @@ The algorithm draws a context-dependent path through the gridpoints so that it s
 s = sfc(data = square, lat = nrow(square):1, lon = 1:ncol(square), verbose = verbose)
 plotPath(s, plot_data = TRUE, colored_line = 'val')
 ```
+
 Here's another way of depicting the path, now with color representing group ID.
 ```{r squarepath2, cache=TRUE}
 plotPath(s, plot_data = TRUE, colored_line = 'group_id')
 ```
+
 Let's replace one of the bubbles with NAs.
 
 ```{r squareNA, cache=TRUE}
