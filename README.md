@@ -57,7 +57,7 @@ group ID.
 
 ![](README_files/figure-markdown_strict/squarepath2-1.png)
 
-Let’s replace one of the bubbles with NAs.
+Let’s add some missing values.
 
     squareNA = square
     squareNA[9:16, 13:20] = NA

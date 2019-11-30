@@ -59,7 +59,7 @@ Here's another way of depicting the path, now with color representing group ID.
 plotPath(s, plot_data = TRUE, colored_line = 'group_id')
 ```
 
-Let's replace one of the bubbles with NAs.
+Let's add some missing values.
 
 ```{r squareNA, cache=TRUE}
 squareNA = square
