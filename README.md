@@ -19,7 +19,7 @@ Examples
 
 Setting up…
 
-    library(scurvy)
+    library(scurvyr)
     verbose = FALSE
     myplot <- function(square_data) {
       ggplot(data=cbind(expand.grid(lat=(3*r):1, lon=1:(3*r)), value=c(square_data)), 
